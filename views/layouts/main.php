@@ -38,21 +38,10 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
-            )
+            ['label' => 'Интернет', 'url' => ['/site/index']],
+            ['label' => 'Телевидение', 'url' => ['/site/about']],
+            ['label' => 'Пакетные предложения', 'url' => ['/site/contact']],
+            ['label' => 'Оплата', 'url' => ['/site/login']],
         ],
     ]);
     NavBar::end();
@@ -68,10 +57,27 @@ AppAsset::register($this);
 </div>
 
 <footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+    <div class="container-fluid">
+        <!-- <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-right"><?= Yii::powered() ?></p> -->
+        <div class="row">
+             <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6">
+                 <p class="my_center-block">ООО «Космос» ИНН 7203452407 ОГРН 1187232015849</p>
+                 <p class="my_center-block">Юр.адрес: г. Тюмень ул. Текстильная д. 1, оф. 1</p>
+                 <p class="my_center-block">Телефон: +7 (3452) 21 88 88</p>
+                 <p class="my_center-block">E-mail: info@ikosmos.tv</p>
+                 <p class="my_center-block">График работы</p>
+                 <p class="my_center-block">Техническая поддержка круглосуточно +7 (3452) 21 88 88</p>
+             </div>
+             <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6">
+                 <p class="my_center-block">Лицензии:</p>
+                 <p class="my_center-block">- Оказание услуг связи по передаче данных, за исключением связи по передаче данных для целей передачи голосовой информации</p>
+                 <p class="my_center-block">- Телематические услуги связи</p>
+                 <p class="my_center-block">- Кабельное телевидение</p>
+                 <p class="my_center-block">Способы оплаты:</p>
+                 <p class="my_center-block">Техническая поддержка круглосуточно +7 (3452) 21 88 88</p>
+             </div>
+        </div>
     </div>
 </footer>
 
