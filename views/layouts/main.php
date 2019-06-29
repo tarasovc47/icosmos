@@ -56,27 +56,31 @@ AppAsset::register($this);
     </div>
 </div>
 
-<footer class="footer">
+<footer class="my-footer-inverse">
     <div class="container-fluid">
         <!-- <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
         <p class="pull-right"><?= Yii::powered() ?></p> -->
         <div class="row">
-             <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6">
-                 <p class="my_center-block">ООО «Космос» ИНН 7203452407 ОГРН 1187232015849</p>
-                 <p class="my_center-block">Юр.адрес: г. Тюмень ул. Текстильная д. 1, оф. 1</p>
-                 <p class="my_center-block">Телефон: +7 (3452) 21 88 88</p>
-                 <p class="my_center-block">E-mail: info@ikosmos.tv</p>
-                 <p class="my_center-block">График работы</p>
-                 <p class="my_center-block">Техническая поддержка круглосуточно +7 (3452) 21 88 88</p>
-             </div>
-             <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6">
-                 <p class="my_center-block">Лицензии:</p>
-                 <p class="my_center-block">- Оказание услуг связи по передаче данных, за исключением связи по передаче данных для целей передачи голосовой информации</p>
-                 <p class="my_center-block">- Телематические услуги связи</p>
-                 <p class="my_center-block">- Кабельное телевидение</p>
-                 <p class="my_center-block">Способы оплаты:</p>
-                 <p class="my_center-block">Техническая поддержка круглосуточно +7 (3452) 21 88 88</p>
-             </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6 my-footer-col">
+                <span class="my-footer-text">ООО «Космос» ИНН 7203452407 ОГРН 1187232015849</span>
+                <span class="my-footer-text">Юр.адрес: г. Тюмень ул. Текстильная д. 1, оф. 1</span>
+                <span class="my-footer-text">Телефон: <a href= "tel:+73452218888">+7 (3452) 21 88 88</a></span>
+                <span class="my-footer-text">E-mail: <a href="mailto:info@ikosmos.tv">info@ikosmos.tv</a></span>
+                <span class="my-footer-text">График работы (тут видимо где-то должен быть график работы?)</span>
+                <span class="my-footer-text">Техническая поддержка круглосуточно <a href= "tel:+73452218888">+7 (3452) 21 88 88</a></span>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6 my-footer-col">
+                <span class="my-footer-text">Лицензии:</span>
+                <span class="my-footer-text">- Оказание услуг связи по передаче данных, за исключением связи по передаче данных для целей передачи голосовой информации</span>
+                <span class="my-footer-text"><a href="images/lic-tele.pdf">- Телематические услуги связи</a></span>
+                <span class="my-footer-text"><a href="images/lic-ctv.pdf">- Кабельное телевидение</a></span>
+                <span class="my-footer-text">Способы оплаты:</span>
+                <span class="my-footer-payvariant col-xs-8 col-sm-8 col-md-8 col-xl-8">
+            		<img src="images/visa.png" class="col-xs-4 col-sm-4 col-md-4 col-xl-4">
+            		<img src="images/mastercard.png" class="col-xs-4 col-sm-4 col-md-4 col-xl-4">
+            		<img src="images/mir.png" class="col-xs-4 col-sm-4 col-md-4 col-xl-4">
+                </span>
+            </div>
         </div>
     </div>
 </footer>
