@@ -38,11 +38,15 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
+            /*Пустые ссылки # не ставить! Не будет отображаться весь лейбл*/
             ['label' => 'Интернет', 'url' => ['/site/index']],
-            ['label' => 'Телевидение', 'url' => ['/site/about']],
+            ['label' => 'Телевидение', 'url' => ['#id']],
             ['label' => 'Пакетные предложения', 'url' => ['/site/contact']],
             ['label' => 'Оплата', 'url' => ['/site/login']],
+            ['label' => '<a href="https://vk.com/ikosmostv"><img src="images/vk.png" class="my-btn-social-icon"></a>'],
+        	['label' => '<a href="https://www.instagram.com/ikosmos.tv/"><img src="images/inst.png" class="my-btn-social-icon"></a>'],
         ],
+        'encodeLabels' => false,
     ]);
     NavBar::end();
     ?>
