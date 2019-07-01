@@ -119,6 +119,7 @@
 	padding-left:0;
 	padding-right:0;
 }
+/********NAVBAR, SOCIAL ICON*****/
 .my-nav-social{
 	background: red;
 	display: flex;
@@ -142,6 +143,7 @@
 {
 	display: none;
 }
+/*******FOOTER>>>>>****/
 .my-footer-text {
   display: block;
 }
@@ -164,6 +166,15 @@
   color: #9d9d9d;
   margin: 2%;
 }
+/********<<<<FOOTER*****/
+
+/********>>>>CAROUSEL****/
+.my-carousel-box {
+	margin:0;
+    padding:0;
+    width:100%
+}
+/********<<<<CAROUSEL****/
 .btn-adn{
 	color:#fff;
 	background-color:#d87a68;

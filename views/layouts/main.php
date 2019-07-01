@@ -71,7 +71,7 @@ AppAsset::register($this);
                 <span class="my-footer-text">Телефон: <a href= "tel:+73452218888">+7(3452)218888</a></span>-->
                 <span class="my-footer-text">E-mail: <a href="mailto:info@ikosmos.tv">info@ikosmos.tv</a></span>
                 <span class="my-footer-text">Техническая поддержка круглосуточно <a href= "tel:+73452218888">+7(3452)218888</a></span>
-                <span class="my-footer-text">Способы оплаты:<img src="images/visav3.png" ><img src="images/mastercardv5.png"><img src="images/mirv3.png"></span>
+                <span class="my-footer-text">Способы оплаты:<img src="images/visav3.png" ><img src="images/mastercardv6.png"><img src="images/mirv3.png"></span>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6 my-footer-col">
                 <span class="my-footer-text">Лицензии:</span>
