@@ -142,6 +142,28 @@
 {
 	display: none;
 }
+.my-footer-text {
+  display: block;
+}
+.my-footer-text > img {
+  display: inline-block;
+	height: 20px;
+	margin-left: 1%;
+}
+.my-footer-payvariant {
+  background: linear-gradient(to top left, #660066, #663300);
+}
+.my-footer-payvariant > img {
+  
+}
+.my-footer-inverse {
+  background-color: #222;
+  border-color: #080808;
+}
+.my-footer-col > span {
+  color: #9d9d9d;
+  margin: 2%;
+}
 .btn-adn{
 	color:#fff;
 	background-color:#d87a68;

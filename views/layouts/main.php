@@ -66,24 +66,24 @@ AppAsset::register($this);
         <p class="pull-right"><?= Yii::powered() ?></p> -->
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6 my-footer-col">
-                <span class="my-footer-text">ООО «Космос» ИНН 7203452407 ОГРН 1187232015849</span>
+                <!-- <span class="my-footer-text">ООО «Космос» ИНН 7203452407 ОГРН 1187232015849</span>
                 <span class="my-footer-text">Юр.адрес: г. Тюмень ул. Текстильная д. 1, оф. 1</span>
-                <span class="my-footer-text">Телефон: <a href= "tel:+73452218888">+7 (3452) 21 88 88</a></span>
+                <span class="my-footer-text">Телефон: <a href= "tel:+73452218888">+7(3452)218888</a></span>-->
                 <span class="my-footer-text">E-mail: <a href="mailto:info@ikosmos.tv">info@ikosmos.tv</a></span>
-                <span class="my-footer-text">График работы (тут видимо где-то должен быть график работы?)</span>
-                <span class="my-footer-text">Техническая поддержка круглосуточно <a href= "tel:+73452218888">+7 (3452) 21 88 88</a></span>
+                <span class="my-footer-text">Техническая поддержка круглосуточно <a href= "tel:+73452218888">+7(3452)218888</a></span>
+                <span class="my-footer-text">Способы оплаты:<img src="images/visav3.png" ><img src="images/mastercardv5.png"><img src="images/mirv3.png"></span>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6 my-footer-col">
                 <span class="my-footer-text">Лицензии:</span>
                 <span class="my-footer-text">- Оказание услуг связи по передаче данных, за исключением связи по передаче данных для целей передачи голосовой информации</span>
                 <span class="my-footer-text"><a href="images/lic-tele.pdf">- Телематические услуги связи</a></span>
                 <span class="my-footer-text"><a href="images/lic-ctv.pdf">- Кабельное телевидение</a></span>
-                <span class="my-footer-text">Способы оплаты:</span>
-                <span class="my-footer-payvariant col-xs-8 col-sm-8 col-md-8 col-xl-8">
+                
+                <!-- <span class="my-footer-payvariant col-xs-8 col-sm-8 col-md-8 col-xl-8">
             		<img src="images/visa.png" class="col-xs-4 col-sm-4 col-md-4 col-xl-4">
             		<img src="images/mastercard.png" class="col-xs-4 col-sm-4 col-md-4 col-xl-4">
             		<img src="images/mir.png" class="col-xs-4 col-sm-4 col-md-4 col-xl-4">
-                </span>
+                </span> -->
             </div>
         </div>
     </div>
