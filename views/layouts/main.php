@@ -39,7 +39,7 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             /*Пустые ссылки # не ставить! Не будет отображаться весь лейбл*/
-            ['label' => 'Интернет', 'url' => ['/site/index']],
+            ['label' => 'Интернет', 'url' => ['/#my-index-internet']],
             ['label' => 'Телевидение', 'url' => ['#id']],
             ['label' => 'Пакетные предложения', 'url' => ['/site/contact']],
             ['label' => 'Оплата', 'url' => ['/site/login']],
@@ -71,11 +71,11 @@ AppAsset::register($this);
                 <span class="my-footer-text">Телефон: <a href= "tel:+73452218888">+7(3452)218888</a></span>-->
                 <span class="my-footer-text">E-mail: <a href="mailto:info@ikosmos.tv">info@ikosmos.tv</a></span>
                 <span class="my-footer-text">Техническая поддержка круглосуточно <a href= "tel:+73452218888">+7(3452)218888</a></span>
-                <span class="my-footer-text">Способы оплаты:<img src="images/visav3.png" ><img src="images/mastercardv6.png"><img src="images/mirv3.png"></span>
+                <span class="my-footer-text">Способы оплаты:<img src="images/visav3.png" ><img src="images/mastercardv7.png"><img src="images/mirv3.png"></span>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6 my-footer-col">
                 <span class="my-footer-text">Лицензии:</span>
-                <span class="my-footer-text">- Оказание услуг связи по передаче данных, за исключением связи по передаче данных для целей передачи голосовой информации</span>
+                <span class="my-footer-text">- Оказание услуг связи по передаче данных</span>
                 <span class="my-footer-text"><a href="images/lic-tele.pdf">- Телематические услуги связи</a></span>
                 <span class="my-footer-text"><a href="images/lic-ctv.pdf">- Кабельное телевидение</a></span>
                 
