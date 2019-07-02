@@ -175,14 +175,56 @@
   margin: 2%;
 }
 /********<<<<FOOTER*****/
-
+/****CLEAR****/
+.my-clear {
+	margin-top: -20px;
+}
+/****CLEAR****/
 /********>>>>CAROUSEL****/
 html body div.wrap div.my-container div#w0.carousel.slide div.carousel-inner div.item img {
 	margin-left: auto;
 	margin-right: auto;
 }
-
 /********<<<<CAROUSEL****/
+/****>>>>INTERNET****/
+#my-index-internet {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: nowrap;
+	align-items: stretch;
+}
+/****<<<<INTERNET****/
+/****>>>>TARIFFS****/
+.my-tariff > .thumbnail {
+	display: flex;
+	flex-direction: column;
+	background: yellow;
+	align-content: center;
+	border-radius: 6px;
+	/*margin-bottom: %; если понадобится отступ от границ раздела*/
+}
+.my-caption {
+	padding: 10%;
+}
+.my-tariff-speed,
+.my-tariff-cost {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.my-tariff-buttons {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+/****<<<<TARIFFS****/
+#my-index-internet {
+	background-image: url(/images/podlozhka4.png);
+	background-repeat: no-repeat;
+	background-color: #ff526d;
+	background-position: center;
+}
 .btn-adn{
 	color:#fff;
 	background-color:#d87a68;
