@@ -187,12 +187,16 @@ html body div.wrap div.my-container div#w0.carousel.slide div.carousel-inner div
 }
 /********<<<<CAROUSEL****/
 /****>>>>INTERNET****/
-#my-index-internet {
+#my-index-internet > .row,
+#my-index-tv > .row,
+#my-index-packet > .row {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
-	flex-wrap: nowrap;
+	justify-content: center;
+	flex-wrap: wrap;
 	align-items: stretch;
+	width: 100%;
+	margin: 0;
 }
 /****<<<<INTERNET****/
 /****>>>>TARIFFS****/
@@ -202,28 +206,98 @@ html body div.wrap div.my-container div#w0.carousel.slide div.carousel-inner div
 	background: yellow;
 	align-content: center;
 	border-radius: 6px;
-	/*margin-bottom: %; если понадобится отступ от границ раздела*/
+	margin-bottom: 3%;
+	margin-top: 3%;
+	box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
 }
-.my-caption {
-	padding: 10%;
+.my-internet-caption,
+.my-tv-caption,
+.my-packet-caption {
+	padding: 1% 5% 1% 5%;
 }
-.my-tariff-speed,
-.my-tariff-cost {
+.my-packet-caption {
+	position: relative;
+}
+.my-packet-param {
+	align-self: flex-start;
+}
+.my-packet-cost {
+	float: right;
+
+}
+.my-internet-param,
+.my-tv-param,
+.my-internet-cost,
+.my-tv-cost {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
-.my-tariff-buttons {
+.my-packet-param {
 	display: flex;
 	flex-direction: column;
+	flex-wrap: nowrap;
+	float: left;
+}
+.my-packet-cost > .my-cost-rubl {
+	
+}
+.my-internet-buttons,
+.my-tv-buttons,
+.my-packet-buttons {
+	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.my-packet-buttons {
+	clear: both;
+}
+.my-btn-primary {
+  color: #fff;
+  background-color: #6A5ACD;
+  border-color: #2e6da4;
+}
+.my-btn-primary:hover {
+	background-color: transparent;
+}
+.my-btn-default {
+	color: #333;
+  background-color: #fff;
+  border-color: #ccc;
 }
 /****<<<<TARIFFS****/
+/****>>>>MODALS****/
+.my-modal-internet {
+	
+}
+/****<<<<MODALS****/
 #my-index-internet {
 	background-image: url(/images/podlozhka4.png);
 	background-repeat: no-repeat;
 	background-color: #ff526d;
 	background-position: center;
+}
+#my-index-tv {
+	background-image: url(/images/podlozhka5.jpg);
+	background-repeat: no-repeat;
+	background-color: #ff526d;
+	background-position: center;
+}
+#my-index-packet {
+	background-image: url(/images/podlozhka6.jpg);
+	background-repeat: no-repeat;
+	background-color: #ff526d;
+	background-position: center;
+}
+.my-internet,
+.my-tv,
+.my-packet {
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 2em;
+	font-variant: small-caps;
+	color: white;
 }
 .btn-adn{
 	color:#fff;
