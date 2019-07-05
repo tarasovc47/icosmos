@@ -127,11 +127,6 @@
 	flex-wrap: nowrap;
 	align-self: center;
 }
-.my-navbar{
-	position: relative;
-  	min-height: 50px;
-  	border: 1px solid transparent;
-}
 .my-btn-social-icon{
 	height:22px;
 	width:22px;
@@ -197,6 +192,7 @@ html body div.wrap div.my-container div#w0.carousel.slide div.carousel-inner div
 	align-items: stretch;
 	width: 100%;
 	margin: 0;
+	padding: 2% 0 2% 0;
 }
 /****<<<<INTERNET****/
 /****>>>>TARIFFS****/
@@ -265,13 +261,42 @@ html body div.wrap div.my-container div#w0.carousel.slide div.carousel-inner div
 	color: #333;
   background-color: #fff;
   border-color: #ccc;
+  min-width: 120px;
 }
 /****<<<<TARIFFS****/
 /****>>>>MODALS****/
 .my-modal-internet {
 	
 }
+.my-modal-tv-body {
+	padding: 2%;
+}
+.my-modal-internet-footer,
+.my-modal-tv-footer {
+	padding: 2%;
+
+}
 /****<<<<MODALS****/
+/****>>>>TARIFF-TABLE****/
+.my-tariff-table {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+	background-color: #9D9D9D;
+	border-radius: 55px;
+	border-style: solid;
+	border-width: 20px;
+	border-color: white;
+}
+.my-tariff-table > thead > tr > th,
+.my-tariff-table > tbody > tr > th,
+.my-tariff-table > thead > tr > td,
+.my-tariff-table > tbody > tr > td {
+  padding: 2%;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+/****<<<<TARIFF-TABLE****/
 #my-index-internet {
 	background-image: url(/images/podlozhka4.png);
 	background-repeat: no-repeat;
