@@ -246,6 +246,23 @@ html body div.wrap div.my-container div#w0.carousel.slide div.carousel-inner div
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+@media screen and (min-width: 1270px) {
+	.my-internet-buttons,
+	.my-tv-buttons,
+	.my-packet-buttons {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: stretch;
+	}
+	.my-internet-buttons > button,
+	.my-tv-buttons > button,
+	.my-packet-buttons > button {
+		margin: 5px;
+	}
+
+}
 .my-packet-buttons {
 	clear: both;
 }
@@ -275,6 +292,11 @@ html body div.wrap div.my-container div#w0.carousel.slide div.carousel-inner div
 .my-modal-tv-footer {
 	padding: 2%;
 
+}
+.my-btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 /****<<<<MODALS****/
 /****>>>>TARIFF-TABLE****/
