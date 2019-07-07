@@ -51,14 +51,6 @@ $config = [
             ],
         ],
     ],
-    'modules' => [
-        'client' => [
-            'class' => 'app\modules\Client',
-        ],
-        'ikosmosusers' => [
-            'class' => 'app\modules\IKosmosUsers',
-        ],
-    ],
     'params' => $params,
 ];
 
