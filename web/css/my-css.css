@@ -319,6 +319,7 @@ html body div.wrap div.my-container div#w0.carousel.slide div.carousel-inner div
   vertical-align: middle;
 }
 /****<<<<TARIFF-TABLE****/
+/****>>>>GENERAL ID's****/
 #my-index-internet {
 	background-image: url(/images/podlozhka4.png);
 	background-repeat: no-repeat;
@@ -346,6 +347,10 @@ html body div.wrap div.my-container div#w0.carousel.slide div.carousel-inner div
 	font-variant: small-caps;
 	color: white;
 }
+#my-connect-form {
+	background: yellow;
+}
+/****<<<<GENERAL ID's****/
 .btn-adn{
 	color:#fff;
 	background-color:#d87a68;
