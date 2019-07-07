@@ -127,6 +127,7 @@ $this->title = 'Kosmos';
 								'class' => 'btn my-btn-success',
 								],
 							]);
+						/*$this->renderAjax('../client/create');*/
 						Modal::end();
 					?>
 		        	<!-- <div><a href="#" class="btn my-btn-primary" role="button">Подключиться</a></div> -->
