@@ -116,8 +116,20 @@ $this->title = 'Kosmos';
 							</div>
 							<?php
 						Modal::end();
+						Modal::begin([
+							'bodyOptions' => [
+								'class' => 'my-modal-internet',
+							],
+							'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
+							'toggleButton' => [
+								'label' => 'Подключиться',
+								'tag' => 'button',
+								'class' => 'btn my-btn-success',
+								],
+							]);
+						Modal::end();
 					?>
-		        	<div><a href="#" class="btn my-btn-primary" role="button">Подключиться</a></div>
+		        	<!-- <div><a href="#" class="btn my-btn-primary" role="button">Подключиться</a></div> -->
 		        </div>
 		      </div>
 		    </div>
