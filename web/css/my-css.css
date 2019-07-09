@@ -298,6 +298,9 @@ html body div.wrap div.my-container div#w0.carousel.slide div.carousel-inner div
   background-color: #5cb85c;
   border-color: #4cae4c;
 }
+.my-modal-connect {
+	padding: 20px;
+}
 /****<<<<MODALS****/
 /****>>>>TARIFF-TABLE****/
 .my-tariff-table {
