@@ -129,8 +129,10 @@ $this->title = 'Kosmos';
 								'class' => 'btn my-btn-success',
 								],
 							]);
-                            $model = new ContactForm();
-                            echo $this->render('contact', ['model' => $model]);
+                        $model = new ContactForm();
+                        echo $this->render('test', [
+                                'model' => $model
+                        ]);
 						Modal::end();
 					?>
 		        	<!-- <div><a href="#" class="btn my-btn-primary" role="button">Подключиться</a></div> -->

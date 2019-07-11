@@ -5,9 +5,11 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 
+
 /**
  * ContactForm is the model behind the contact form.
  */
+
 class ContactForm extends Model
 {
     public $name;
@@ -15,7 +17,6 @@ class ContactForm extends Model
     public $subject;
     public $body;
     public $verifyCode;
-
 
     /**
      * @return array the validation rules.
@@ -56,9 +57,23 @@ class ContactForm extends Model
                 ->setSubject($this->subject)
                 ->setTextBody($this->body)
                 ->send();
-
             return true;
         }
         return false;
+    }
+
+    /**
+     * @return string|\yii\web\Response
+     */
+    public function actionTest()
+    {
+        $model = new ContactForm();
+        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+            return Yii::$app->controller->refresh();
+        }
+        return Yii::$app->controller->render('test', [
+            'model' => $model,
+        ]);
     }
 }
