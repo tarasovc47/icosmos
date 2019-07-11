@@ -129,10 +129,10 @@ $this->title = 'Kosmos';
 								'class' => 'btn my-btn-success',
 								],
 							]);
-                        $model = new ContactForm();
-                        echo $this->render('test', [
+                       /* echo $this->render('test', [
                                 'model' => $model
-                        ]);
+                        ]);*/
+                        echo ContactForm::actionMail();
 						Modal::end();
 					?>
 		        	<!-- <div><a href="#" class="btn my-btn-primary" role="button">Подключиться</a></div> -->
@@ -203,8 +203,22 @@ $this->title = 'Kosmos';
 							</div>
 							<?php
 						Modal::end();
-					?>
-		        	<div><a href="#" class="btn my-btn-primary" role="button">Подключиться</a></div>
+					Modal::begin([
+							'bodyOptions' => [
+								'class' => 'my-modal-connect',
+							],
+							'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
+							'toggleButton' => [
+								'label' => 'Подключиться',
+								'tag' => 'button',
+								'class' => 'btn my-btn-success',
+								],
+							]);
+                       /* echo $this->render('test', [
+                                'model' => $model
+                        ]);*/
+                        echo ContactForm::actionMail();
+						Modal::end();?>
 		        </div>
 		      </div>
 		    </div>
@@ -272,8 +286,22 @@ $this->title = 'Kosmos';
 							</div>
 							<?php
 						Modal::end();
-					?>       	
-					<div><a href="#" class="btn my-btn-primary" role="button">Подключиться</a></div>
+                            Modal::begin([
+                                'bodyOptions' => [
+                                    'class' => 'my-modal-connect',
+                                ],
+                                'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
+                                'toggleButton' => [
+                                    'label' => 'Подключиться',
+                                    'tag' => 'button',
+                                    'class' => 'btn my-btn-success',
+                                ],
+                            ]);
+                            /* echo $this->render('test', [
+                                     'model' => $model
+                             ]);*/
+                            echo ContactForm::actionMail();
+                            Modal::end();?>
 		        </div>
 		      </div>
 		    </div>
@@ -325,8 +353,22 @@ $this->title = 'Kosmos';
 							</div>
 							<?php
 						Modal::end();
-					?>
-		        	<div><a href="#" class="btn my-btn-primary" role="button">Подключиться</a></div>
+                            Modal::begin([
+                                'bodyOptions' => [
+                                    'class' => 'my-modal-connect',
+                                ],
+                                'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
+                                'toggleButton' => [
+                                    'label' => 'Подключиться',
+                                    'tag' => 'button',
+                                    'class' => 'btn my-btn-success',
+                                ],
+                            ]);
+                            /* echo $this->render('test', [
+                                     'model' => $model
+                             ]);*/
+                            echo ContactForm::actionMail();
+                            Modal::end();?>
 		        </div>
 		      </div>
 		    </div>
@@ -373,8 +415,22 @@ $this->title = 'Kosmos';
 							</div>
 							<?php
 						Modal::end();
-					?>
-		        	<div><a href="#" class="btn my-btn-primary" role="button">Подключиться</a></div>
+                            Modal::begin([
+                                'bodyOptions' => [
+                                    'class' => 'my-modal-connect',
+                                ],
+                                'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
+                                'toggleButton' => [
+                                    'label' => 'Подключиться',
+                                    'tag' => 'button',
+                                    'class' => 'btn my-btn-success',
+                                ],
+                            ]);
+                            /* echo $this->render('test', [
+                                     'model' => $model
+                             ]);*/
+                            echo ContactForm::actionMail();
+                            Modal::end();?>
 		        </div>
 		      </div>
 		    </div>
@@ -469,8 +525,22 @@ $this->title = 'Kosmos';
 							</div>
 							<?php
 						Modal::end();
-					?>
-		        	<div><a href="#" class="btn my-btn-primary" role="button">Подключиться</a></div>
+                            Modal::begin([
+                                'bodyOptions' => [
+                                    'class' => 'my-modal-connect',
+                                ],
+                                'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
+                                'toggleButton' => [
+                                    'label' => 'Подключиться',
+                                    'tag' => 'button',
+                                    'class' => 'btn my-btn-success',
+                                ],
+                            ]);
+                            /* echo $this->render('test', [
+                                     'model' => $model
+                             ]);*/
+                            echo ContactForm::actionMail();
+                            Modal::end();?>
 		        </div>
 		      </div>
 		    </div>
@@ -543,8 +613,22 @@ $this->title = 'Kosmos';
 							</div>
 							<?php
 						Modal::end();
-					?>
-		        	<div><a href="#" class="btn my-btn-primary" role="button">Подключиться</a></div>
+                            Modal::begin([
+                                'bodyOptions' => [
+                                    'class' => 'my-modal-connect',
+                                ],
+                                'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
+                                'toggleButton' => [
+                                    'label' => 'Подключиться',
+                                    'tag' => 'button',
+                                    'class' => 'btn my-btn-success',
+                                ],
+                            ]);
+                            /* echo $this->render('test', [
+                                     'model' => $model
+                             ]);*/
+                            echo ContactForm::actionMail();
+                            Modal::end();?>
 		        </div>
 		      </div>
 		    </div>

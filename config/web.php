@@ -58,6 +58,11 @@ $config = [
             'rules' => [
             ],
         ],
+        'reCaptcha' => [
+            'class' => 'himiklab\yii2\recaptcha\ReCaptchaConfig',
+            'siteKeyV2' => '6LfJNq0UAAAAACWtNgJAmFJy8enuCLMYYy532WMy',
+            'secretV2' => '6LfJNq0UAAAAAMirY3pbBrYS3ivJgmihsKBx5Z0X',
+        ],
     ],
     'params' => $params,
 ];

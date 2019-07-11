@@ -137,9 +137,4 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-    public function actionRender()
-    {
-        $model = new ContactForm();
-        return $this->render('test', ['model' => $model]);
-    }
 }
