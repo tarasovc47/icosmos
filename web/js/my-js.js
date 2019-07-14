@@ -9,12 +9,18 @@ window.onscroll = function() {
   };
 };
 
-
-/*$(".navbar-toggle").click(function(){
-	$(".navbar-header").css("opacity", function(i,val)){
-		if($(".navbar-toggle").hasClass("collapsed") == true) {
-			alert "alert";
-		}
-		else alert "norm";
-	}
-}*/
+$("#w16 > li:nth-child(1) > a:nth-child(1)").click(function () {
+  $('html, body').animate({
+    scrollTop: $(".my-internet").offset().top
+  }, 1000);
+})
+$("#w16 > li:nth-child(2) > a:nth-child(1)").click(function () {
+  $('html, body').animate({
+    scrollTop: $(".my-tv").offset().top
+  }, 1000);
+})
+$("#w16 > li:nth-child(3) > a:nth-child(1)").click(function () {
+  $('html, body').animate({
+    scrollTop: $(".my-packet").offset().top
+  }, 1000);
+})

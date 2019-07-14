@@ -25,6 +25,7 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
+<?= \bluezed\scrollTop\ScrollTop::widget() ?>
 
 <div class="wrap">
     <?php
@@ -40,9 +41,9 @@ AppAsset::register($this);
         'items' => [
             /*Пустые ссылки # не ставить! Не будет отображаться весь лейбл*/
             ['label' => 'Интернет', 'url' => ['/#my-index-internet']],
-            ['label' => 'Телевидение', 'url' => ['#id']],
-            ['label' => 'Пакетные предложения', 'url' => ['/site/contact']],
-            ['label' => 'Оплата', 'url' => ['/site/login']],
+            ['label' => 'Телевидение', 'url' => ['/#my-index-tv']],
+            ['label' => 'Пакетные предложения', 'url' => ['/#my-index-packet']],
+            ['label' => 'Оплата', 'url' => ['/']],
             ['label' => '<a href="https://vk.com/ikosmostv"><img src="images/vk.png" class="my-btn-social-icon"></a>'],
         	['label' => '<a href="https://www.instagram.com/ikosmos.tv/"><img src="images/inst.png" class="my-btn-social-icon"></a>'],
         ],

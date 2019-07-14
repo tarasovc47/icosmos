@@ -68,8 +68,7 @@ $this->title = 'Kosmos';
 		        	<p class="my-cost-rubl">300 &#8381;/месяц</p>
 		        </div>
 		        <div class="my-internet-buttons">
-		        	<!-- <div><a href="#" class="btn my-btn-default" role="button">Подробнее</a></div> -->
-		        	<?php
+                    <?php
 						Modal::begin([
 							'bodyOptions' => [
 								'class' => 'my-modal-internet',
@@ -129,13 +128,9 @@ $this->title = 'Kosmos';
 								'class' => 'btn my-btn-success',
 								],
 							]);
-                       /* echo $this->render('test', [
-                                'model' => $model
-                        ]);*/
                         echo ContactForm::actionMail();
 						Modal::end();
 					?>
-		        	<!-- <div><a href="#" class="btn my-btn-primary" role="button">Подключиться</a></div> -->
 		        </div>
 		      </div>
 		    </div>
@@ -214,9 +209,6 @@ $this->title = 'Kosmos';
 								'class' => 'btn my-btn-success',
 								],
 							]);
-                       /* echo $this->render('test', [
-                                'model' => $model
-                        ]);*/
                         echo ContactForm::actionMail();
 						Modal::end();?>
 		        </div>
@@ -297,11 +289,8 @@ $this->title = 'Kosmos';
                                     'class' => 'btn my-btn-success',
                                 ],
                             ]);
-                            /* echo $this->render('test', [
-                                     'model' => $model
-                             ]);*/
-                            echo ContactForm::actionMail();
-                            Modal::end();?>
+                        echo ContactForm::actionMail();
+                        Modal::end();?>
 		        </div>
 		      </div>
 		    </div>
@@ -364,11 +353,8 @@ $this->title = 'Kosmos';
                                     'class' => 'btn my-btn-success',
                                 ],
                             ]);
-                            /* echo $this->render('test', [
-                                     'model' => $model
-                             ]);*/
-                            echo ContactForm::actionMail();
-                            Modal::end();?>
+                        echo ContactForm::actionMail();
+                        Modal::end();?>
 		        </div>
 		      </div>
 		    </div>
@@ -426,11 +412,8 @@ $this->title = 'Kosmos';
                                     'class' => 'btn my-btn-success',
                                 ],
                             ]);
-                            /* echo $this->render('test', [
-                                     'model' => $model
-                             ]);*/
-                            echo ContactForm::actionMail();
-                            Modal::end();?>
+                        echo ContactForm::actionMail();
+                        Modal::end();?>
 		        </div>
 		      </div>
 		    </div>
@@ -536,11 +519,8 @@ $this->title = 'Kosmos';
                                     'class' => 'btn my-btn-success',
                                 ],
                             ]);
-                            /* echo $this->render('test', [
-                                     'model' => $model
-                             ]);*/
-                            echo ContactForm::actionMail();
-                            Modal::end();?>
+                        echo ContactForm::actionMail();
+                        Modal::end();?>
 		        </div>
 		      </div>
 		    </div>
@@ -624,11 +604,8 @@ $this->title = 'Kosmos';
                                     'class' => 'btn my-btn-success',
                                 ],
                             ]);
-                            /* echo $this->render('test', [
-                                     'model' => $model
-                             ]);*/
-                            echo ContactForm::actionMail();
-                            Modal::end();?>
+                        echo ContactForm::actionMail();
+                        Modal::end();?>
 		        </div>
 		      </div>
 		    </div>
