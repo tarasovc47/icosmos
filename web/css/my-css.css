@@ -120,6 +120,9 @@
 	padding-right:0;
 }
 /********NAVBAR, SOCIAL ICON*****/
+.my-logo {
+	height: 100%;
+}
 .my-nav-social{
 	background: red;
 	display: flex;
