@@ -125,4 +125,8 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+    public function actionArsenalpay()
+    {
+        return $this->render('arsenalpay');
+    }
 }
