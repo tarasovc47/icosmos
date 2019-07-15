@@ -14,7 +14,7 @@ use yii\helpers\Html;
 
 class ContactForm extends Model
 {
-/*    public $reCaptcha;*/
+    /*    public $reCaptcha;*/
     public $name;
     public $email;
     public $phone;
@@ -83,21 +83,21 @@ class ContactForm extends Model
                 <?php $form = ActiveForm::begin([
                     'id' => 'contact-form',
                 ]); ?>
-                    <?= $form->field($model, 'name')->textInput(['autofocus' => true, 'placeholder' => 'Ваше имя', 'label' => 'Ваше имя']) ?>
-                    <?= $form->field($model, 'email')->textInput(['placeholder' => 'адрес электронной почты',])?>
-                    <?= $form->field($model, 'phone')->widget(\yii\widgets\MaskedInput::className(), [
+                <?= $form->field($model, 'name')->textInput(['autofocus' => true, 'placeholder' => 'Ваше имя', 'label' => 'Ваше имя']) ?>
+                <?= $form->field($model, 'email')->textInput(['placeholder' => 'адрес электронной почты',]) ?>
+                <?= $form->field($model, 'phone')->widget(\yii\widgets\MaskedInput::className(), [
                     'mask' => '+7 (999) 999 99 99',
-                    ])->textInput(['placeholder' => $model->getAttributeLabel('phone')]);?>
-                    <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
-                    <?php /*Гуглокапча, заработает только на ikosmos.tv= $form->field($model, 'reCaptcha')->widget(
+                ])->textInput(['placeholder' => $model->getAttributeLabel('phone')]); ?>
+                <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
+                <?php /*Гуглокапча, заработает только на ikosmos.tv= $form->field($model, 'reCaptcha')->widget(
                     \himiklab\yii2\recaptcha\ReCaptcha2::className(),
                     [
                         'siteKey' => '6LfJNq0UAAAAACWtNgJAmFJy8enuCLMYYy532WMy', // unnecessary is reCaptcha component was set up
                     ]
                 )*/ ?>
-                    <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                        'template' => '<div class="row"><div class="col-lg-4">{image}</div><div class="col-lg-4">{input}</div></div>',
-                    ]) ?>
+                <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+                    'template' => '<div class="row"><div class="col-lg-4">{image}</div><div class="col-lg-4">{input}</div></div>',
+                ]) ?>
                 <div class="form-group">
                     <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
                 </div>
@@ -112,18 +112,18 @@ class ContactForm extends Model
                         ->setHtmlBody("<b>Поступило сообщение от</b> $model->name <b>(почта:</b> $model->email<b>)</b>. <br> " // текст с HTML
                             . "<br><b>Текст сообщения:</b><br> $model->body.<br><b>Контактный телефон: </b> $model->phone")
                         ->send();
-                /*Yii::$app->session->addFlash('contactFormSubmitted');*/
+                    /*Yii::$app->session->addFlash('contactFormSubmitted');*/
                 endif;
-               /* if (Yii::$app->session->hasFlash('contactFormSubmitted')):
-                    ContactForm::mailGrace();
-                endif;*/
+                /* if (Yii::$app->session->hasFlash('contactFormSubmitted')):
+                     ContactForm::mailGrace();
+                 endif;*/
                 ActiveForm::end();
                 ?>
             </div>
         </div>
-    <?php
+        <?php
     }
-   /* public static function mailGrace() {
-        echo 'Спасибо!';
-    }*/
+    /* public static function mailGrace() {
+         echo 'Спасибо!';
+     }*/
 }

@@ -42,8 +42,16 @@ AppAsset::register($this);
             /*Пустые ссылки # не ставить! Не будет отображаться весь лейбл*/
             ['label' => 'Интернет', 'url' => ['/#my-index-internet']],
             ['label' => 'Телевидение', 'url' => ['/#my-index-tv']],
-            ['label' => 'Пакетные предложения', 'url' => ['/#my-index-packet']],
-            ['label' => 'Оплата', 'url' => ['/']],
+            ['label' => 'Пакетные предложения', 'url' => ['/']],
+            [
+                'label' => 'Оплата',
+                'url' => ['/'],
+                'options' => [
+                    'id' => 'link',
+                    'data-toggle' => 'modal',
+                    'data-target' => '#my-modal-arsenalpay',
+                ]
+            ],
             ['label' => '<a href="https://vk.com/ikosmostv"><img src="images/vk.png" class="my-btn-social-icon"></a>'],
         	['label' => '<a href="https://www.instagram.com/ikosmos.tv/"><img src="images/inst.png" class="my-btn-social-icon"></a>'],
         ],

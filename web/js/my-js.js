@@ -24,3 +24,10 @@ $("#w16 > li:nth-child(3) > a:nth-child(1)").click(function () {
     scrollTop: $(".my-packet").offset().top
   }, 1000);
 })
+
+document.onclick = function (event)
+{
+  var e = event || window.event, obj = e.target || e.srcElement;
+  if (obj.tagName == 'A' && obj.href == document.location.href)
+    if (e.preventDefault) e.preventDefault (); else e.returnValue = false;
+}

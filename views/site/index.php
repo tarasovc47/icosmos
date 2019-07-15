@@ -51,7 +51,25 @@ $this->title = 'Kosmos';
 	 ]
 	]);
 	?>
-	<div id="my-index-internet">
+    <div class="modal fade" id="my-modal-arsenalpay">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <div id='arsenalpay-widget'></div>
+                    <script src='https://arsenalpay.ru/widget/script.js'></script>
+                    <script>
+                        var widget = new ArsenalpayWidget();
+                        widget.element = 'arsenalpay-widget';
+                        widget.widget = 674;
+                        widget.render();
+                    </script>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="my-index-internet">
 		<div class="my-internet">Космический интернет</div>
 		<div class="row">
 		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-2">
