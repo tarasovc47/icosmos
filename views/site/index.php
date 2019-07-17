@@ -7,6 +7,7 @@ use yii\bootstrap\Carousel;
 use yii\bootstrap\Modal;
 use app\models\ContactForm;
 use yii\captcha\Captcha;
+use app\models\Tariffs;
 
 $this->title = 'Kosmos';
 ?>
@@ -26,17 +27,17 @@ $this->title = 'Kosmos';
 	<?php
 	$carousel = [
 	 [
-	 'content' => '<img src="images/podlozhka1v2.png"/>',
+	 'content' => '<img src="images/podlozhka1v2.png" alt=""/>',
 	 'caption' => '<h3>Заголовок1</h3><p>Какой-то дополнительный текст</p><p><a href="/" class="btn btn-primary">Подробнее <span class="glyphicon glyphicon-chevron-right"></a></p>',
 	 'options' => []
 	 ],
 	 [
-	 'content' => '<img src="images/podlozhka2v2.png"/>',
+	 'content' => '<img src="images/podlozhka2v2.png" alt=""/>',
 	 'caption' => '<h3>Заголовок2</h3><p>Какой-то дополнительный текст</p><p><a href="/" class="btn btn-primary">Подробнее <span class="glyphicon glyphicon-chevron-right"></a></p>',
 	 'options' => []
 	 ],
 	 [
-	 'content' => '<img src="images/podlozhka3v2.png"/>',
+	 'content' => '<img src="images/podlozhka3v2.png" alt=""/>',
 	 'caption' => '<h3>Заголовок3</h3><p>Какой-то дополнительный текст</p><p><a href="/" class="btn btn-primary">Подробнее <span class="glyphicon glyphicon-chevron-right"></a></p>',
 	 'options' => []
 	 ]
@@ -59,7 +60,7 @@ $this->title = 'Kosmos';
                     <div id='arsenalpay-widget'></div>
                     <script src='https://arsenalpay.ru/widget/script.js'></script>
                     <script>
-                        var widget = new ArsenalpayWidget();
+                        let widget = new ArsenalpayWidget();
                         widget.element = 'arsenalpay-widget';
                         widget.widget = 674;
                         widget.render();
@@ -72,18 +73,18 @@ $this->title = 'Kosmos';
     <div id="my-index-internet">
 		<div class="my-internet">Космический интернет</div>
 		<div class="row">
-		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-2">
+		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-3">
 		    <div class="thumbnail">
-		      <img src="images/tariffs/lunohod.png" class="col-xs-5 col-sm-5 col-md-6 col-xl-6">
+		      <img src="images/tariffs/lunohod.png" alt="" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
 		      <div class="my-internet-caption">
-		        <h4 class="my-tariff-name">"Луноход"</h4>
+		        <h4 class="my-tariff-name"><?= Tariffs::$name[0]?></h4>
 		        <div class="my-internet-param">
 		        	<p class="my-speed">Скорость:</p>
-		        	<p class="my-mbit">50 Мбит/с</p>
+		        	<p class="my-mbit"><?= Tariffs::$speed[0]?></p>
 		        </div>
 		        <div class="my-internet-cost">
 		        	<p class="my-cost-cost">Стоимость тарифа:</p>
-		        	<p class="my-cost-rubl">300 &#8381;/месяц</p>
+		        	<p class="my-cost-rubl"><?= Tariffs::$cost[0]?></p>
 		        </div>
 		        <div class="my-internet-buttons">
                     <?php
@@ -97,43 +98,13 @@ $this->title = 'Kosmos';
 							'tag' => 'button',
 							'class' => 'btn my-btn-default',
 							],
-							]);
-							?>
-							<table class="my-tariff-table">
-								<thead>
-									<th>Услуга</th>
-									<th>Характеристика</th>
-								</thead>
-								<tr>
-									<td>Абонентская плата</td>
-									<td>300 &#8381/мес</td>
-								</tr>
-								<tr>
-									<td>Скорость доступа</td>
-									<td>до 50 Мбит/с</td>
-								</tr>
-								<tr>
-									<td>Подключение</td>
-									<td>бесплатно</td>
-								</tr>
-								<tr>
-									<td>VIP-подключение</td>
-									<td>1000 &#8381</td>
-								</tr>
-								<tr>
-									<td>Wi-Fi роутер</td>
-									<td>аренда 50&#8381/мес<br>рассрочка на 3-6 мес.</td>
-								</tr>
-								<tr>
-									<td>Настройка оборудования</td>
-									<td>бесплатно</td>
-								</tr>
-							</table>
-							<div class="my-modal-internet-footer">
+                            'footer' => '
+                                <div class="my-modal-internet-footer">
 								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
 								Наличие технической возможности подключения уточняйте по телефону +7(3452)21-88-88 или на сайте в разделе заявка на подключение
-							</div>
-							<?php
+							    </div>',
+							]);
+							echo Tariffs::lunohod_detail();
 						Modal::end();
 						Modal::begin([
 							'bodyOptions' => [
@@ -153,18 +124,18 @@ $this->title = 'Kosmos';
 		      </div>
 		    </div>
 		  </div>
-		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-2">
+		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-3">
 		    <div class="thumbnail">
-		      <img src="images/tariffs/raketa.png" class="col-xs-5 col-sm-5 col-md-6 col-xl-6">
+		      <img src="images/tariffs/raketa.png" alt="" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
 		      <div class="my-internet-caption">
-		        <h4 class="my-tariff-name">"Ракета"</h4>
+		        <h4 class="my-tariff-name"><?= Tariffs::$name[1]?></h4>
 		        <div class="my-internet-param">
 		        	<p class="my-speed">Скорость:</p>
-		        	<p class="my-mbit">100 Мбит/с</p>
+		        	<p class="my-mbit"><?= Tariffs::$speed[1]?></p>
 		        </div>
 		        <div class="my-internet-cost">
 		        	<p class="my-cost-cost">Стоимость тарифа:</p>
-		        	<p class="my-cost-rubl">400 &#8381;/месяц</p>
+		        	<p class="my-cost-rubl"><?= Tariffs::$cost[1]?></p>
 		        </div>
 		        <div class="my-internet-buttons">
 		        	<?php
@@ -178,43 +149,14 @@ $this->title = 'Kosmos';
 							'tag' => 'button',
 							'class' => 'btn my-btn-default',
 							],
-							]);
-							?>
-							<table class="my-tariff-table">
-								<thead>
-									<th>Услуга</th>
-									<th>Характеристика</th>
-								</thead>
-								<tr>
-									<td>Абонентская плата</td>
-									<td>400 &#8381/мес</td>
-								</tr>
-								<tr>
-									<td>Скорость доступа</td>
-									<td>до 100 Мбит/с</td>
-								</tr>
-								<tr>
-									<td>Подключение</td>
-									<td>бесплатно</td>
-								</tr>
-								<tr>
-									<td>VIP-подключение</td>
-									<td>1000 &#8381</td>
-								</tr>
-								<tr>
-									<td>Wi-Fi роутер</td>
-									<td>аренда 50&#8381/мес<br>рассрочка на 3-6 мес.</td>
-								</tr>
-								<tr>
-									<td>Настройка оборудования</td>
-									<td>бесплатно</td>
-								</tr>
-							</table>
-							<div class="my-modal-internet-footer">
+                            'footer' => '
+                            <div class="my-modal-internet-footer">
 								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
 								Наличие технической возможности подключения уточняйте по телефону +7(3452)21-88-88 или на сайте в разделе заявка на подключение
 							</div>
-							<?php
+                            '
+							]);
+						    echo Tariffs::raketa_detail();
 						Modal::end();
 					Modal::begin([
 							'bodyOptions' => [
@@ -233,18 +175,18 @@ $this->title = 'Kosmos';
 		      </div>
 		    </div>
 		  </div>
-		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-2">
+		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-3">
 		    <div class="thumbnail">
-		      <img src="images/tariffs/kosmolet.svg" class="col-xs-5 col-sm-5 col-md-6 col-xl-6">
+		      <img src="images/tariffs/kosmolet.svg" alt="" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
 		      <div class="my-internet-caption">
-		        <h4 class="my-tariff-name">"Космолёт"</h4>
+		        <h4 class="my-tariff-name"><?= Tariffs::$name[2]?></h4>
 		        <div class="my-internet-param">
 		        	<p class="my-speed">Скорость:</p>
-		        	<p class="my-mbit">150 Мбит/с</p>
+		        	<p class="my-mbit"><?= Tariffs::$speed[2]?></p>
 		        </div>
 		        <div class="my-internet-cost">
 		        	<p class="my-cost-cost">Стоимость тарифа:</p>
-		        	<p class="my-cost-rubl">500 &#8381;/месяц</p>
+		        	<p class="my-cost-rubl"><?= Tariffs::$cost[2]?></p>
 		        </div>
 		        <div class="my-internet-buttons">
 					<?php
@@ -258,55 +200,26 @@ $this->title = 'Kosmos';
 							'tag' => 'button',
 							'class' => 'btn my-btn-default',
 							],
-							]);
-							?>
-							<table class="my-tariff-table">
-								<thead>
-									<th>Услуга</th>
-									<th>Характеристика</th>
-								</thead>
-								<tr>
-									<td>Абонентская плата</td>
-									<td>500 &#8381/мес</td>
-								</tr>
-								<tr>
-									<td>Скорость доступа</td>
-									<td>до 150 Мбит/с</td>
-								</tr>
-								<tr>
-									<td>Подключение</td>
-									<td>бесплатно</td>
-								</tr>
-								<tr>
-									<td>VIP-подключение</td>
-									<td>1000 &#8381</td>
-								</tr>
-								<tr>
-									<td>Wi-Fi роутер</td>
-									<td>аренда 50&#8381/мес<br>рассрочка на 3-6 мес.</td>
-								</tr>
-								<tr>
-									<td>Настройка оборудования</td>
-									<td>бесплатно</td>
-								</tr>
-							</table>
-							<div class="my-modal-internet-footer">
+                            'footer' => '
+                            <div class="my-modal-internet-footer">
 								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
 								Наличие технической возможности подключения уточняйте по телефону +7(3452)21-88-88 или на сайте в разделе заявка на подключение
 							</div>
-							<?php
+                            '
+							]);
+						    echo Tariffs::kosmolet_detail();
 						Modal::end();
-                            Modal::begin([
-                                'bodyOptions' => [
-                                    'class' => 'my-modal-connect',
-                                ],
-                                'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
-                                'toggleButton' => [
-                                    'label' => 'Подключиться',
-                                    'tag' => 'button',
-                                    'class' => 'btn my-btn-success',
-                                ],
-                            ]);
+						Modal::begin([
+                            'bodyOptions' => [
+                                'class' => 'my-modal-connect',
+                            ],
+                            'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
+                            'toggleButton' => [
+                                'label' => 'Подключиться',
+                                'tag' => 'button',
+                                'class' => 'btn my-btn-success',
+                            ],
+                        ]);
                         echo ContactForm::actionMail();
                         Modal::end();?>
 		        </div>
@@ -318,18 +231,18 @@ $this->title = 'Kosmos';
 	<div id="my-index-tv">
 		<div class="my-tv">Космическое телевидение</div>
 		<div class="row">
-			<div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-2">
+			<div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-3">
 		    <div class="thumbnail">
-		      <img src="images/tariffs/zemlyane.svg" class="col-xs-5 col-sm-5 col-md-6 col-xl-6">
+		      <img src="images/tariffs/zemlyane.svg" alt="" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
 		      <div class="my-tv-caption">
-		        <h4 class="my-tariff-name">"Земляне"</h4>
+		        <h4 class="my-tariff-name"><?= Tariffs::$name[3]?></h4>
 		        <div class="my-tv-param">
-		        	<p class="my-tv-channel">80 каналов</p>
-		        	<p class="my-tv-archive">72 часа архива</p>
+		        	<p class="my-tv-channel"><?= Tariffs::$channels[0]?></p>
+		        	<p class="my-tv-archive"><?= Tariffs::$archive[1]?></p>
 		        </div>
 		        <div class="my-tv-cost">
 		        	<p class="my-cost-cost">Стоимость тарифа:</p>
-		        	<p class="my-cost-rubl">80 &#8381;/месяц</p>
+		        	<p class="my-cost-rubl"><?= Tariffs::$cost[3]?></p>
 		        </div>
 		        <div class="my-tv-buttons">
 		        	<?php
@@ -343,6 +256,12 @@ $this->title = 'Kosmos';
 							'tag' => 'button',
 							'class' => 'btn my-btn-default',
 							],
+                            'footer' => '
+                            <div class="my-modal-tv-footer">
+								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
+								Для предоставления услуги необходим доступ в интернетчерез любого провайдера, рекомендуется не менее 10Мбит/с
+							</div>
+                            '
 							]);
 							?>
 							<div class="my-modal-tv-body">
@@ -354,41 +273,37 @@ $this->title = 'Kosmos';
 								- возможность подключения к любому телевизору<br>
 								- IVI, YOUTUBE и YOUTUBE KIDS уже в вашем телевизоре.<br>
 							</div>
-							<div class="my-modal-tv-footer">
-								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
-								Для предоставления услуги необходим доступ в интернетчерез любого провайдера, рекомендуется не менее 10Мбит/с
-							</div>
 							<?php
 						Modal::end();
-                            Modal::begin([
-                                'bodyOptions' => [
-                                    'class' => 'my-modal-connect',
-                                ],
-                                'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
-                                'toggleButton' => [
-                                    'label' => 'Подключиться',
-                                    'tag' => 'button',
-                                    'class' => 'btn my-btn-success',
-                                ],
-                            ]);
+                        Modal::begin([
+                            'bodyOptions' => [
+                                'class' => 'my-modal-connect',
+                            ],
+                            'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
+                            'toggleButton' => [
+                                'label' => 'Подключиться',
+                                'tag' => 'button',
+                                'class' => 'btn my-btn-success',
+                            ],
+                        ]);
                         echo ContactForm::actionMail();
                         Modal::end();?>
 		        </div>
 		      </div>
 		    </div>
 		  </div>
-		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-2">
+		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-3">
 		    <div class="thumbnail">
-		      <img src="images/tariffs/marsiane.png" class="col-xs-5 col-sm-5 col-md-6 col-xl-6">
+		      <img src="images/tariffs/marsiane.png" alt="" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
 		      <div class="my-tv-caption">
-		        <h4 class="my-tariff-name">"Марсиане"</h4>
+		        <h4 class="my-tariff-name"><?= Tariffs::$name[4]?></h4>
 		        <div class="my-tv-param">
-		        	<p class="my-tv-channel">200 каналов</p>
-		        	<p class="my-tv-archive">72 часа архива</p>
+		        	<p class="my-tv-channel"><?= Tariffs::$channels[1]?></p>
+		        	<p class="my-tv-archive"><?= Tariffs::$archive[1]?></p>
 		        </div>
 		        <div class="my-tv-cost">
 		        	<p class="my-cost-cost">Стоимость тарифа:</p>
-		        	<p class="my-cost-rubl">200 &#8381;/месяц</p>
+		        	<p class="my-cost-rubl"><?= Tariffs::$cost[4]?></p>
 		        </div>
 		        <div class="my-tv-buttons">
 		        	<?php
@@ -402,6 +317,12 @@ $this->title = 'Kosmos';
 							'tag' => 'button',
 							'class' => 'btn my-btn-default',
 							],
+                            'footer' => '
+                            <div class="my-modal-tv-footer">
+								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
+								Для предоставления услуги необходим доступ в интернет через любого провайдера, рекомендуется не менее 10Мбит/с
+							</div>
+                            '
 							]);
 							?>
 							<div class="my-modal-tv-body">
@@ -413,23 +334,19 @@ $this->title = 'Kosmos';
 								- возможность подключения к любому телевизору<br>
 								- IVI, YOUTUBE и YOUTUBE KIDS уже в вашем телевизоре.<br>
 							</div>
-							<div class="my-modal-tv-footer">
-								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
-								Для предоставления услуги необходим доступ в интернет через любого провайдера, рекомендуется не менее 10Мбит/с
-							</div>
 							<?php
 						Modal::end();
-                            Modal::begin([
-                                'bodyOptions' => [
-                                    'class' => 'my-modal-connect',
-                                ],
-                                'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
-                                'toggleButton' => [
-                                    'label' => 'Подключиться',
-                                    'tag' => 'button',
-                                    'class' => 'btn my-btn-success',
-                                ],
-                            ]);
+                        Modal::begin([
+                            'bodyOptions' => [
+                                'class' => 'my-modal-connect',
+                            ],
+                            'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
+                            'toggleButton' => [
+                                'label' => 'Подключиться',
+                                'tag' => 'button',
+                                'class' => 'btn my-btn-success',
+                            ],
+                        ]);
                         echo ContactForm::actionMail();
                         Modal::end();?>
 		        </div>
@@ -441,19 +358,19 @@ $this->title = 'Kosmos';
 	<div id="my-index-packet">
 	<div class="my-packet">Космические пакеты</div>
 		<div class="row">
-			<div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-2">
+			<div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-3">
 		    <div class="thumbnail">
-		      <img src="images/tariffs/nevesomost.png" class="col-xs-5 col-sm-5 col-md-6 col-xl-6">
+		      <img src="images/tariffs/nevesomost.png" alt="" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
 		      <div class="my-packet-caption">
-		        <h4 class="my-tariff-name">"Невесомость"</h4>
+		        <h4 class="my-tariff-name"><?= Tariffs::$name[5]?></h4>
 		        <div class="my-packet-param">
-		        	<p class="my-speed">50 Мбит/с</p>
-		        	<p class="my-tv-channel">80 каналов</p>
-		        	<p class="my-tv-archive">48 часов архива</p>
+		        	<p class="my-speed"><?= Tariffs::$speed[0]?></p>
+		        	<p class="my-tv-channel"><?= Tariffs::$channels[0]?></p>
+		        	<p class="my-tv-archive"><?= Tariffs::$archive[0]?></p>
 		        </div>
 		        <div class="my-packet-cost">
-		        	<!-- <p class="my-cost-cost">Стоимость тарифа:</p> -->
-		        	<p class="my-cost-rubl">300 &#8381;/месяц</p>
+		        	<p class="my-cost-cost">Стоимость тарифа:</p>
+		        	<p class="my-cost-rubl"><?= Tariffs::$cost[5]?></p>
 		        </div>
 		        <div class="my-packet-buttons">
 		        	<?php
@@ -467,101 +384,51 @@ $this->title = 'Kosmos';
 							'tag' => 'button',
 							'class' => 'btn my-btn-default',
 							],
-							]);
-							?>
-							<table class="my-tariff-table">
-								<thead>
-									<th>Услуга</th>
-									<th>Характеристика</th>
-								</thead>
-								<tr>
-									<td>Абонентская плата</td>
-									<td>300 &#8381/мес</td>
-								</tr>
-								<tr>
-									<td>Скорость доступа</td>
-									<td>до 50 Мбит/с</td>
-								</tr>
-								<tr>
-									<td>Количество каналов</td>
-									<td>80</td>
-								</tr>
-								<tr>
-									<td>Подключение</td>
-									<td>бесплатно</td>
-								</tr>
-								<tr>
-									<td>VIP-подключение</td>
-									<td>1000 &#8381</td>
-								</tr>
-								<tr>
-									<td>Wi-Fi роутер</td>
-									<td>аренда 50&#8381/мес<br>рассрочка на 3-6 мес.</td>
-								</tr>
-								<tr>
-									<td>TV-приставки:</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>TVIP S.110</td>
-									<td>аренда - 20&#8381/мес</td>
-								</tr>
-								<tr>
-									<td>TVIP S.605</td>
-									<td>рассрочка 20 мес. - 200 &#8381<br>
-									покупка - 4000 &#8381</td>
-								</tr>
-								<tr>
-									<td>Настройка оборудования</td>
-									<td>бесплатно</td>
-								</tr>
-								<tr>
-									<td>Архив телепередач</td>
-									<td>72 часа</td>
-								</tr>
-							</table>
-							<div class="my-modal-internet-footer">
+                            'footer' => '
+                            <div class="my-modal-internet-footer">
 								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
 								Наличие технической возможности подключения уточняйте по телефону +7(3452)21-88-88 или на сайте в разделе заявка на подключение
 							</div>
-							<?php
+                            '
+							]);
+						    echo Tariffs::nevesomost_detail();
 						Modal::end();
-                            Modal::begin([
-                                'bodyOptions' => [
-                                    'class' => 'my-modal-connect',
-                                ],
-                                'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
-                                'toggleButton' => [
-                                    'label' => 'Подключиться',
-                                    'tag' => 'button',
-                                    'class' => 'btn my-btn-success',
-                                ],
-                            ]);
+                        Modal::begin([
+                            'bodyOptions' => [
+                                'class' => 'my-modal-connect',
+                            ],
+                            'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
+                            'toggleButton' => [
+                                'label' => 'Подключиться',
+                                'tag' => 'button',
+                                'class' => 'btn my-btn-success',
+                            ],
+                        ]);
                         echo ContactForm::actionMail();
                         Modal::end();?>
 		        </div>
 		      </div>
 		    </div>
 		  </div>
-		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-2">
+		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-3">
 		    <div class="thumbnail">
-		      <img src="images/tariffs/galaktika.png" class="col-xs-5 col-sm-5 col-md-6 col-xl-6">
+		      <img src="images/tariffs/galaktika.png" alt="" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
 		      <div class="my-packet-caption">
-		        <h4 class="my-tariff-name">"Галактика"</h4>
+		        <h4 class="my-tariff-name"><?= Tariffs::$name[6]?></h4>
 		        <div class="my-packet-param">
-		        	<p class="my-speed">100 Мбит/с</p>
-		        	<p class="my-tv-channel">20 каналов</p>
-		        	<p class="my-tv-archive">72 часа архива</p>
+		        	<p class="my-speed"><?= Tariffs::$speed[1]?></p>
+		        	<p class="my-tv-channel"><?= Tariffs::$channels[1]?></p>
+		        	<p class="my-tv-archive"><?= Tariffs::$archive[1]?></p>
 		        </div>
 		        <div class="my-packet-cost">
-		        	<!-- <p class="my-cost-cost">Стоимость тарифа:</p> -->
-		        	<p class="my-cost-rubl">450 &#8381;/месяц</p>
+		        	<p class="my-cost-cost">Стоимость тарифа:</p>
+		        	<p class="my-cost-rubl"><?= Tariffs::$cost[6]?></p>
 		        </div>
 		        <div class="my-packet-buttons">
 		        	<?php
 						Modal::begin([
 							'bodyOptions' => [
-								'class' => 'my-modal-internet',
+								'class' => 'my-modal-packet',
 							],
 							'header' => '<h2 class="my-modal-header">Тарифный план "Галактика"</h2>',
 							'toggleButton' => [
@@ -569,59 +436,26 @@ $this->title = 'Kosmos';
 							'tag' => 'button',
 							'class' => 'btn my-btn-default',
 							],
-							]);
-							?>
-							<table class="my-tariff-table">
-								<thead>
-									<th>Услуга</th>
-									<th>Характеристика</th>
-								</thead>
-								<tr>
-									<td>Абонентская плата</td>
-									<td>300 &#8381/мес</td>
-								</tr>
-								<tr>
-									<td>Скорость доступа</td>
-									<td>до 50 Мбит/с</td>
-								</tr>
-								<tr>
-									<td>Подключение</td>
-									<td>бесплатно</td>
-								</tr>
-								<tr>
-									<td>VIP-подключение</td>
-									<td>1000 &#8381</td>
-								</tr>
-								<tr>
-									<td>Wi-Fi роутер</td>
-									<td>аренда 50&#8381/мес<br>рассрочка на 3-6 мес.</td>
-								</tr>
-								<tr>
-									<td>Настройка оборудования</td>
-									<td>бесплатно</td>
-								</tr>
-								<tr>
-									<td>Архив телепередач</td>
-									<td>72 часа</td>
-								</tr>
-							</table>
-							<div class="my-modal-internet-footer">
+                            'footer' => '
+                            <div class="my-modal-internet-footer">
 								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
 								Наличие технической возможности подключения уточняйте по телефону +7(3452)21-88-88 или на сайте в разделе заявка на подключение
 							</div>
-							<?php
+                            '
+							]);
+						    echo Tariffs::galaktika_detail();
 						Modal::end();
-                            Modal::begin([
-                                'bodyOptions' => [
-                                    'class' => 'my-modal-connect',
-                                ],
-                                'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
-                                'toggleButton' => [
-                                    'label' => 'Подключиться',
-                                    'tag' => 'button',
-                                    'class' => 'btn my-btn-success',
-                                ],
-                            ]);
+                        Modal::begin([
+                            'bodyOptions' => [
+                                'class' => 'my-modal-connect',
+                            ],
+                            'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
+                            'toggleButton' => [
+                                'label' => 'Подключиться',
+                                'tag' => 'button',
+                                'class' => 'btn my-btn-success',
+                            ],
+                        ]);
                         echo ContactForm::actionMail();
                         Modal::end();?>
 		        </div>
