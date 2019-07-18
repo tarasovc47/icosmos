@@ -8,6 +8,9 @@ use yii\bootstrap\Modal;
 use app\models\ContactForm;
 use yii\captcha\Captcha;
 use app\models\Tariffs;
+use app\models\BlockInternet;
+use app\models\BlockTv;
+use app\models\BlockPacket;
 
 $this->title = 'Kosmos';
 ?>
@@ -23,6 +26,7 @@ $this->title = 'Kosmos';
     <!--Start-slider-script-->
 </head>
 <!-- Head -->
+<?php $this->beginBody() ?>
 <body>
 	<?php
 	$carousel = [
@@ -66,404 +70,103 @@ $this->title = 'Kosmos';
                         widget.render();
                     </script>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
+            </div>
+        </div>
+    </div>
     <div id="my-index-internet">
 		<div class="my-internet">Космический интернет</div>
 		<div class="row">
-		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-3">
-		    <div class="thumbnail">
-		      <img src="images/tariffs/lunohod.png" alt="" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
-		      <div class="my-internet-caption">
-		        <h4 class="my-tariff-name"><?= Tariffs::$name[0]?></h4>
-		        <div class="my-internet-param">
-		        	<p class="my-speed">Скорость:</p>
-		        	<p class="my-mbit"><?= Tariffs::$speed[0]?></p>
-		        </div>
-		        <div class="my-internet-cost">
-		        	<p class="my-cost-cost">Стоимость тарифа:</p>
-		        	<p class="my-cost-rubl"><?= Tariffs::$cost[0]?></p>
-		        </div>
-		        <div class="my-internet-buttons">
-                    <?php
-						Modal::begin([
-							'bodyOptions' => [
-								'class' => 'my-modal-internet',
-							],
-							'header' => '<h2 class="my-modal-header">Тарифный план "Луноход"</h2>',
-							'toggleButton' => [
-							'label' => 'Подробнее',
-							'tag' => 'button',
-							'class' => 'btn my-btn-default',
-							],
-                            'footer' => '
-                                <div class="my-modal-internet-footer">
-								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
-								Наличие технической возможности подключения уточняйте по телефону +7(3452)21-88-88 или на сайте в разделе заявка на подключение
-							    </div>',
-							]);
-							echo Tariffs::lunohod_detail();
-						Modal::end();
-						Modal::begin([
-							'bodyOptions' => [
-								'class' => 'my-modal-connect',
-							],
-							'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
-							'toggleButton' => [
-								'label' => 'Подключиться',
-								'tag' => 'button',
-								'class' => 'btn my-btn-success',
-								],
-							]);
-                        echo ContactForm::actionMail();
-						Modal::end();
-					?>
-		        </div>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-3">
-		    <div class="thumbnail">
-		      <img src="images/tariffs/raketa.png" alt="" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
-		      <div class="my-internet-caption">
-		        <h4 class="my-tariff-name"><?= Tariffs::$name[1]?></h4>
-		        <div class="my-internet-param">
-		        	<p class="my-speed">Скорость:</p>
-		        	<p class="my-mbit"><?= Tariffs::$speed[1]?></p>
-		        </div>
-		        <div class="my-internet-cost">
-		        	<p class="my-cost-cost">Стоимость тарифа:</p>
-		        	<p class="my-cost-rubl"><?= Tariffs::$cost[1]?></p>
-		        </div>
-		        <div class="my-internet-buttons">
-		        	<?php
-						Modal::begin([
-							'bodyOptions' => [
-								'class' => 'my-modal-internet',
-							],
-							'header' => '<h2 class="my-modal-header">Тарифный план "Ракета"</h2>',
-							'toggleButton' => [
-							'label' => 'Подробнее',
-							'tag' => 'button',
-							'class' => 'btn my-btn-default',
-							],
-                            'footer' => '
-                            <div class="my-modal-internet-footer">
-								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
-								Наличие технической возможности подключения уточняйте по телефону +7(3452)21-88-88 или на сайте в разделе заявка на подключение
-							</div>
-                            '
-							]);
-						    echo Tariffs::raketa_detail();
-						Modal::end();
-					Modal::begin([
-							'bodyOptions' => [
-								'class' => 'my-modal-connect',
-							],
-							'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
-							'toggleButton' => [
-								'label' => 'Подключиться',
-								'tag' => 'button',
-								'class' => 'btn my-btn-success',
-								],
-							]);
-                        echo ContactForm::actionMail();
-						Modal::end();?>
-		        </div>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-3">
-		    <div class="thumbnail">
-		      <img src="images/tariffs/kosmolet.svg" alt="" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
-		      <div class="my-internet-caption">
-		        <h4 class="my-tariff-name"><?= Tariffs::$name[2]?></h4>
-		        <div class="my-internet-param">
-		        	<p class="my-speed">Скорость:</p>
-		        	<p class="my-mbit"><?= Tariffs::$speed[2]?></p>
-		        </div>
-		        <div class="my-internet-cost">
-		        	<p class="my-cost-cost">Стоимость тарифа:</p>
-		        	<p class="my-cost-rubl"><?= Tariffs::$cost[2]?></p>
-		        </div>
-		        <div class="my-internet-buttons">
-					<?php
-						Modal::begin([
-							'bodyOptions' => [
-								'class' => 'my-modal-internet',
-							],
-							'header' => '<h2 class="my-modal-header">Тарифный план "Космолёт"</h2>',
-							'toggleButton' => [
-							'label' => 'Подробнее',
-							'tag' => 'button',
-							'class' => 'btn my-btn-default',
-							],
-                            'footer' => '
-                            <div class="my-modal-internet-footer">
-								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
-								Наличие технической возможности подключения уточняйте по телефону +7(3452)21-88-88 или на сайте в разделе заявка на подключение
-							</div>
-                            '
-							]);
-						    echo Tariffs::kosmolet_detail();
-						Modal::end();
-						Modal::begin([
-                            'bodyOptions' => [
-                                'class' => 'my-modal-connect',
-                            ],
-                            'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
-                            'toggleButton' => [
-                                'label' => 'Подключиться',
-                                'tag' => 'button',
-                                'class' => 'btn my-btn-success',
-                            ],
-                        ]);
-                        echo ContactForm::actionMail();
-                        Modal::end();?>
-		        </div>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-	</div>
+            <?php
+            BlockInternet::renderBlock_internet1('lunohod');
+            BlockInternet::render_tariffname('lunohod');
+            BlockInternet::renderBlock_internet2();
+            BlockInternet::render_tariffspeed('lunohod');
+            BlockInternet::renderBlock_internet3();
+            BlockInternet::render_tariffcost('lunohod');
+            BlockInternet::renderBlock_internet4();
+            BlockInternet::echo_modal('lunohod');
+            BlockInternet::renderBlock_internet5();
+            BlockInternet::renderBlock_internet1('raketa');
+            BlockInternet::render_tariffname('raketa');
+            BlockInternet::renderBlock_internet2();
+            BlockInternet::render_tariffspeed('raketa');
+            BlockInternet::renderBlock_internet3();
+            BlockInternet::render_tariffcost('raketa');
+            BlockInternet::renderBlock_internet4();
+            BlockInternet::echo_modal('raketa');
+            BlockInternet::renderBlock_internet5();
+            BlockInternet::renderBlock_internet1('kosmolet');
+            BlockInternet::render_tariffname('kosmolet');
+            BlockInternet::renderBlock_internet2();
+            BlockInternet::render_tariffspeed('kosmolet');
+            BlockInternet::renderBlock_internet3();
+            BlockInternet::render_tariffcost('kosmolet');
+            BlockInternet::renderBlock_internet4();
+            BlockInternet::echo_modal('kosmolet');
+            BlockInternet::renderBlock_internet5();
+            ?>
 	<div id="my-index-tv">
 		<div class="my-tv">Космическое телевидение</div>
 		<div class="row">
-			<div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-3">
-		    <div class="thumbnail">
-		      <img src="images/tariffs/zemlyane.svg" alt="" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
-		      <div class="my-tv-caption">
-		        <h4 class="my-tariff-name"><?= Tariffs::$name[3]?></h4>
-		        <div class="my-tv-param">
-		        	<p class="my-tv-channel"><?= Tariffs::$channels[0]?></p>
-		        	<p class="my-tv-archive"><?= Tariffs::$archive[1]?></p>
-		        </div>
-		        <div class="my-tv-cost">
-		        	<p class="my-cost-cost">Стоимость тарифа:</p>
-		        	<p class="my-cost-rubl"><?= Tariffs::$cost[3]?></p>
-		        </div>
-		        <div class="my-tv-buttons">
-		        	<?php
-						Modal::begin([
-							'bodyOptions' => [
-								'class' => 'my-modal-tv',
-							],
-							'header' => '<h2 class="my-modal-header">Тарифный план "Земляне"</h2>',
-							'toggleButton' => [
-							'label' => 'Подробнее',
-							'tag' => 'button',
-							'class' => 'btn my-btn-default',
-							],
-                            'footer' => '
-                            <div class="my-modal-tv-footer">
-								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
-								Для предоставления услуги необходим доступ в интернетчерез любого провайдера, рекомендуется не менее 10Мбит/с
-							</div>
-                            '
-							]);
-							?>
-							<div class="my-modal-tv-body">
-								Пакет из 80 популярных каналов - всего за 80 рублей в месяц!<br>
-								- Управление просмотром с функциями паузы, перемотки и записи трансляции<br>
-								- Архивация эфира на 72 часа<br>
-								- Возможность подключать USB-накопители (флеш-карты и внешние жесткие диски) и просматривать фотографии и другие файлы<br>
-								- Один пульт на ТВ и приставку (с функцией программирования кнопок)<br>
-								- возможность подключения к любому телевизору<br>
-								- IVI, YOUTUBE и YOUTUBE KIDS уже в вашем телевизоре.<br>
-							</div>
-							<?php
-						Modal::end();
-                        Modal::begin([
-                            'bodyOptions' => [
-                                'class' => 'my-modal-connect',
-                            ],
-                            'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
-                            'toggleButton' => [
-                                'label' => 'Подключиться',
-                                'tag' => 'button',
-                                'class' => 'btn my-btn-success',
-                            ],
-                        ]);
-                        echo ContactForm::actionMail();
-                        Modal::end();?>
-		        </div>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-3">
-		    <div class="thumbnail">
-		      <img src="images/tariffs/marsiane.png" alt="" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
-		      <div class="my-tv-caption">
-		        <h4 class="my-tariff-name"><?= Tariffs::$name[4]?></h4>
-		        <div class="my-tv-param">
-		        	<p class="my-tv-channel"><?= Tariffs::$channels[1]?></p>
-		        	<p class="my-tv-archive"><?= Tariffs::$archive[1]?></p>
-		        </div>
-		        <div class="my-tv-cost">
-		        	<p class="my-cost-cost">Стоимость тарифа:</p>
-		        	<p class="my-cost-rubl"><?= Tariffs::$cost[4]?></p>
-		        </div>
-		        <div class="my-tv-buttons">
-		        	<?php
-						Modal::begin([
-							'bodyOptions' => [
-								'class' => 'my-modal-tv',
-							],
-							'header' => '<h2 class="my-modal-header">Тарифный план "Марсиане"</h2>',
-							'toggleButton' => [
-							'label' => 'Подробнее',
-							'tag' => 'button',
-							'class' => 'btn my-btn-default',
-							],
-                            'footer' => '
-                            <div class="my-modal-tv-footer">
-								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
-								Для предоставления услуги необходим доступ в интернет через любого провайдера, рекомендуется не менее 10Мбит/с
-							</div>
-                            '
-							]);
-							?>
-							<div class="my-modal-tv-body">
-								Пакет из 200 популярных каналов - всего за 230 рублей в месяц!<br>
-								- Управление просмотром с функциями паузы, перемотки и записи трансляции<br>
-								- Архивация эфира на 72 часа<br>
-								- Возможность подключать USB-накопители (флеш-карты и внешние жесткие диски) и просматривать фотографии и другие файлы<br>
-								- Один пульт на ТВ и приставку (с функцией программирования кнопок)<br>
-								- возможность подключения к любому телевизору<br>
-								- IVI, YOUTUBE и YOUTUBE KIDS уже в вашем телевизоре.<br>
-							</div>
-							<?php
-						Modal::end();
-                        Modal::begin([
-                            'bodyOptions' => [
-                                'class' => 'my-modal-connect',
-                            ],
-                            'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
-                            'toggleButton' => [
-                                'label' => 'Подключиться',
-                                'tag' => 'button',
-                                'class' => 'btn my-btn-success',
-                            ],
-                        ]);
-                        echo ContactForm::actionMail();
-                        Modal::end();?>
-		        </div>
-		      </div>
-		    </div>
-		  </div>
+            <?php
+            BlockTv::renderBlock_tv1('zemlyane');
+            BlockTv::render_tariffname('zemlyane');
+            BlockTv::renderBlock_tv2();
+            BlockTv::render_tariffchannels('zemlyane');
+            BlockTv::renderBlock_tv3();
+            BlockTv::render_tariffarchive('zemlyane');
+            BlockTv::renderBlock_tv4();
+            BlockTv::render_tariffcost('zemlyane');
+            BlockTv::renderBlock_tv5();
+            BlockTv::echo_modal('zemlyane');
+            BlockTv::renderBlock_tv6();
+            BlockTv::renderBlock_tv1('marsiane');
+            BlockTv::render_tariffname('marsiane');
+            BlockTv::renderBlock_tv2();
+            BlockTv::render_tariffchannels('marsiane');
+            BlockTv::renderBlock_tv3();
+            BlockTv::render_tariffarchive('marsiane');
+            BlockTv::renderBlock_tv4();
+            BlockTv::render_tariffcost('marsiane');
+            BlockTv::renderBlock_tv5();
+            BlockTv::echo_modal('marsiane');
+            BlockTv::renderBlock_tv6();
+            ?>
 		</div>
 	</div>
 	<div id="my-index-packet">
 	<div class="my-packet">Космические пакеты</div>
 		<div class="row">
-			<div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-3">
-		    <div class="thumbnail">
-		      <img src="images/tariffs/nevesomost.png" alt="" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
-		      <div class="my-packet-caption">
-		        <h4 class="my-tariff-name"><?= Tariffs::$name[5]?></h4>
-		        <div class="my-packet-param">
-		        	<p class="my-speed"><?= Tariffs::$speed[0]?></p>
-		        	<p class="my-tv-channel"><?= Tariffs::$channels[0]?></p>
-		        	<p class="my-tv-archive"><?= Tariffs::$archive[0]?></p>
-		        </div>
-		        <div class="my-packet-cost">
-		        	<p class="my-cost-cost">Стоимость тарифа:</p>
-		        	<p class="my-cost-rubl"><?= Tariffs::$cost[5]?></p>
-		        </div>
-		        <div class="my-packet-buttons">
-		        	<?php
-						Modal::begin([
-							'bodyOptions' => [
-								'class' => 'my-modal-packet',
-							],
-							'header' => '<h2 class="my-modal-header">Тарифный план "Невесомость"</h2>',
-							'toggleButton' => [
-							'label' => 'Подробнее',
-							'tag' => 'button',
-							'class' => 'btn my-btn-default',
-							],
-                            'footer' => '
-                            <div class="my-modal-internet-footer">
-								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
-								Наличие технической возможности подключения уточняйте по телефону +7(3452)21-88-88 или на сайте в разделе заявка на подключение
-							</div>
-                            '
-							]);
-						    echo Tariffs::nevesomost_detail();
-						Modal::end();
-                        Modal::begin([
-                            'bodyOptions' => [
-                                'class' => 'my-modal-connect',
-                            ],
-                            'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
-                            'toggleButton' => [
-                                'label' => 'Подключиться',
-                                'tag' => 'button',
-                                'class' => 'btn my-btn-success',
-                            ],
-                        ]);
-                        echo ContactForm::actionMail();
-                        Modal::end();?>
-		        </div>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="my-tariff col-xs-12 col-sm-5 col-md-4 col-lg-3">
-		    <div class="thumbnail">
-		      <img src="images/tariffs/galaktika.png" alt="" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
-		      <div class="my-packet-caption">
-		        <h4 class="my-tariff-name"><?= Tariffs::$name[6]?></h4>
-		        <div class="my-packet-param">
-		        	<p class="my-speed"><?= Tariffs::$speed[1]?></p>
-		        	<p class="my-tv-channel"><?= Tariffs::$channels[1]?></p>
-		        	<p class="my-tv-archive"><?= Tariffs::$archive[1]?></p>
-		        </div>
-		        <div class="my-packet-cost">
-		        	<p class="my-cost-cost">Стоимость тарифа:</p>
-		        	<p class="my-cost-rubl"><?= Tariffs::$cost[6]?></p>
-		        </div>
-		        <div class="my-packet-buttons">
-		        	<?php
-						Modal::begin([
-							'bodyOptions' => [
-								'class' => 'my-modal-packet',
-							],
-							'header' => '<h2 class="my-modal-header">Тарифный план "Галактика"</h2>',
-							'toggleButton' => [
-							'label' => 'Подробнее',
-							'tag' => 'button',
-							'class' => 'btn my-btn-default',
-							],
-                            'footer' => '
-                            <div class="my-modal-internet-footer">
-								<i>При единовременной оплате услуг за 1 год предоставляется скидка 15%</i><br>
-								Наличие технической возможности подключения уточняйте по телефону +7(3452)21-88-88 или на сайте в разделе заявка на подключение
-							</div>
-                            '
-							]);
-						    echo Tariffs::galaktika_detail();
-						Modal::end();
-                        Modal::begin([
-                            'bodyOptions' => [
-                                'class' => 'my-modal-connect',
-                            ],
-                            'header' => '<h2 class="my-modal-header">Заявка на подключение</h2>',
-                            'toggleButton' => [
-                                'label' => 'Подключиться',
-                                'tag' => 'button',
-                                'class' => 'btn my-btn-success',
-                            ],
-                        ]);
-                        echo ContactForm::actionMail();
-                        Modal::end();?>
-		        </div>
-		      </div>
-		    </div>
-		  </div>
+            <?php
+            BlockPacket::renderBlock_packet1('nevesomost');
+            BlockPacket::render_tariffname('nevesomost');
+            BlockPacket::renderBlock_packet2();
+            BlockPacket::render_tariffspeed('nevesomost');
+            BlockPacket::renderBlock_packet3();
+            BlockPacket::render_tariffchannels('nevesomost');
+            BlockPacket::renderBlock_packet4();
+            BlockPacket::render_tariffarchive('nevesomost');
+            BlockPacket::renderBlock_packet5();
+            BlockPacket::render_tariffcost('nevesomost');
+            BlockPacket::renderBlock_packet6();
+            BlockPacket::echo_modal('nevesomost');
+            BlockPacket::renderBlock_packet7();
+            BlockPacket::renderBlock_packet1('galaktika');
+            BlockPacket::render_tariffname('galaktika');
+            BlockPacket::renderBlock_packet2();
+            BlockPacket::render_tariffspeed('galaktika');
+            BlockPacket::renderBlock_packet3();
+            BlockPacket::render_tariffchannels('galaktika');
+            BlockPacket::renderBlock_packet4();
+            BlockPacket::render_tariffarchive('galaktika');
+            BlockPacket::renderBlock_packet5();
+            BlockPacket::render_tariffcost('galaktika');
+            BlockPacket::renderBlock_packet6();
+            BlockPacket::echo_modal('galaktika');
+            BlockPacket::renderBlock_packet7();
+            ?>
 		</div>
 	</div>
-<?php $this->beginBody() ?>
+
 <script src="//unpkg.com/@textback/notification-widget@latest/build/index.js"></script>
 <tb-notification-widget  widget-id=190f222f-89e9-b092-39df-016bb8e2b03d></tb-notification-widget>
